@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <style type="text/css">
@@ -40,6 +42,12 @@
     }
     div.hide_desktop {
       display: none !important;
+    }
+    .icon-flipped {
+      transform: scaleX(-1);
+      -moz-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
     }
     /*DESKTOP STYLES*/
     @media only screen and (min-width: 640px) {
@@ -286,8 +294,9 @@
                           text-decoration: none;
                         "
                         target="_blank"
-                        >Review Your Claim</a
                       >
+                        Review Your Claim &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </a>
                     </td>
                   </tr>
                 </table>
@@ -429,28 +438,26 @@
                         with the total loss claim on your [vehicle_year],
                         [vehicle_brand] [vehicle_model]. 
                         Now that we’ve received your claim, you can login to 
-                        <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank">
-                          Claim And Title Process Portal
-                        </a> 
-                        anytime.<br /><br />
+                        <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank">Claim And Title Process Portal</a> anytime.
+                        <br /><br />
 
-                        <div style="background-color: #f8f8f8; width: 100%; min-height: 600px; text-align: center; padding-bottom: 5px;">
-                          <h3 style="background-color: #0d5db8; color: #ffffff; padding: 5px;">Your Check List</h3>
-                          <div style="height: 120px; display: flex; flex-direction: column; padding: 5px;">
-                            <img src="https://pngimg.com/uploads/free_shipping/free_shipping_PNG74.png" alt="" style="width: 70px; height: auto; margin: 0 auto;">
+                        <div style="color: #0d5db8; background-color: #f8f8f8; width: 100%; min-height: 620px; text-align: center; padding-bottom: 5px; border-radius: 5px;">
+                          <h3 style="background-color: #0d5db8; color: #ffffff; padding: 10px; border-radius: 5px 5px 0px 0px;">Your Check List:</h3>
+                          <div style="height: 120px; display: flex; flex-direction: column; padding: 0px 50px; margin-bottom: 15px;">
+                            <i class="fa fa-truck w3-jumbo icon-flipped"></i>
                             <p>We will be shipping documents to your mailing address to
                               process this claim.</p>
                           </div>
-                          <div style="height: 120px; display: flex; flex-direction: column; padding: 5px;">
-                            <img src="https://lthomason.files.wordpress.com/2018/06/read-the-instructions.png?w=640" alt="" style="width: 70px; height: auto; margin: 0 auto;">
+                          <div style="height: 120px; display: flex; flex-direction: column; padding: 0px 50px; margin-bottom: 15px;">
+                            <i class="fa fa-book w3-jumbo"></i>
                             <p>It is very important that you read all instructions before completing any documents.</p>
                           </div>
-                          <div style="height: 120px; display: flex; flex-direction: column; padding: 5px;">
-                            <img src="https://toppng.com/uploads/preview/free-return-shipping-icon-money-back-guarantee-11562896424zcigvtufhl.png" alt="" style="width: 70px; height: auto; margin: 0 auto;">
+                          <div style="height: 120px; display: flex; flex-direction: column; padding: 0px 50px; margin-bottom: 15px;">
+                            <i class="fa fa-reply w3-jumbo"></i>
                             <p>Once finished, please use the return shipping label provided to return your packet as soon as possible.</p>
                           </div>
-                          <div style="height: 120px; display: flex; flex-direction: column; padding: 5px;">
-                            <img src="https://e7.pngegg.com/pngimages/793/724/png-clipart-reminder-sticky-note-template-paper-post-it-note-logo-font-reminder-notes-text-rectangle-thumbnail.png" alt="" style="width: 70px; height: auto; margin: 0 auto;">
+                          <div style="height: 120px; display: flex; flex-direction: column; padding: 0px 50px; margin-bottom: 15px;">
+                            <i class="fa fa-exclamation-circle w3-jumbo"></i>
                             <p>Please make sure to reference your <strong>Lot #: [lot_number]</strong>
                               when reaching out to us, so that we can easily locate your claim
                               and provide you with the most accurate information.</p>
@@ -466,14 +473,14 @@
                               background-color: #0d5db8;
                               border: none;
                               color: white;
-                              padding: 20px;
+                              padding: 15px 40px;
                               text-align: center;
                               text-decoration: none;
                               display: inline-block;
                               font-size: 16px;
                               border-radius: 30px;"
                             >
-                              Login to Claim And Title Process Portal &#187;
+                              <b>Login to Claim And Title Process Portal &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
                             </button>
                           </a>
                         </div>
