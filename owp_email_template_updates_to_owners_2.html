@@ -50,8 +50,28 @@
       -webkit-transform: scaleX(-1);
       -ms-transform: scaleX(-1);
     }
+    .bordered th, .bordered td {
+      border: 1px solid #dddddd;
+      vertical-align: top;
+      padding: 0;
+    }
+    .bordered-bottom {
+      width: 100%;
+    }
+    #included-documents td, #required-documents td {
+      padding-left: 5px;
+      border: none;
+      height: 50px;
+      vertical-align: middle;
+    }
+    #included-documents tr:nth-child(odd), #required-documents tr:nth-child(odd) {
+      background-color: rgb(13, 93, 184, 0.2);
+    }
     /*DESKTOP STYLES*/
     @media only screen and (min-width: 640px) {
+      .to-do-list {
+        text-align: center;
+      }
     }
 
     @media only screen and (min-width: 481px) {
@@ -207,6 +227,24 @@
         margin: auto !important;
         padding-right: 20px !important;
       }
+
+      .responsive-icon:before {
+        font-size: 33px;
+      }
+
+      .signature {
+        margin-top: 20px;
+      }
+
+      .to-do-list-header {
+        text-align: center;
+      }
+
+      .list-item {
+        height: auto;
+        margin-bottom: 20px;
+        vertical-align: middle;
+      }
     }
   </style>
 
@@ -260,7 +298,6 @@
                         text-align: left;
                         padding-left: 5px;
                       "
-                      class="hide_on_mobile"
                     >
                       Claim #TP140521081543634
                     </td>
@@ -390,16 +427,40 @@
                       >
                         Hello <strong>Leutinent Clark</strong>,<br /><br />
                         Copart has teamed up with USAA to assist you with the total loss processing on your 2021 Honda Accord. Our Title Procurement team will be reaching out to you for more details.
-                        <br /><br />
 
-                        Please <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank">click here</a> to track the status of your claim. If this link is not working please use: <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank">https://connect.copart.com/tp/145ed492dcf?source=email</a>
-                        <br /><br />
+                        <p>Please review and track the status of your claim here:</p>
+                        <div style="text-align: center;">
+                          <button 
+                            style="
+                            background-color: #0d5db8;
+                            border: none;
+                            color: white;
+                            padding: 15px 40px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            border-radius: 30px;"
+                          >
+                            <b>
+                              <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank" style="text-decoration: none; color: white;">
+                                Login to Title Process Portal &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                              </a>
+                            </b>
+                          </button>
+                        </div>
+                        <p style="text-align: center; margin-top: 0px;">
+                          <small>
+                            You can also use this link to access the Portal: <br>
+                            <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank">https://connect.copart.com/tp/145ed492dcf?source=email</a>.
+                          </small>
+                        </p>
 
                          It has come to our attention that you need additional documentation for review purposes, to have on 
-                            file or just to be able to complete our request for the documents
+                            file or just to be able to complete our request for the documents.
 
 
-                        <div th:if="${not #lists.isEmpty(required_documents)}">
+                        <!-- <div th:if="${not #lists.isEmpty(required_documents)}">
                             <p>The required documents are as below:</p>
                             <ul th:each="document:${required_documents}">
                                 <li th:text="${document}">Letter of Gaurantee</li>
@@ -415,114 +476,144 @@
                             <ul th:each="document:${included_documents}">
                                 <li th:text="${document}">Original Signed Title</li>
                             </ul>
-                        </div>
+                        </div> -->
+
+                        <table style="margin: 20px 0px; width: 100%; border-collapse: collapse; border-radius: 5px; border-style: hidden; box-shadow: 0 0 0 1px #dddddd;" class="bordered">
+                          <!-- <h6 style="color: white; font-weight: bold; text-align: center; width:100%; background-color: rgb(13, 93, 184)">Document Summary</h6> -->
+                          <!-- <tr style="width: 100%; background-color: rgb(13, 93, 184);">
+                            <th style="width:100%; color: white; border-top-left-radius: 5px; border-top-right-radius: 5px;" colspan="2" align="center">Document Summary</th>
+                          </tr> -->
+                          <tr style="background-color: rgb(13, 93, 184); color: #f8f8f8;">
+                            <th align="center" style="font-size: 15px; width: 50%;">Documents Included In The Email</th>
+                            <th align="center" style="font-size: 15px; width: 50%;">Documents Expected Back</th>
+                          </tr>
+                          <tr style="background-color: rgb(13, 93, 184, 0.1);">
+                            <td>
+                              <!-- <div th:if="${not #lists.isEmpty(included_documents)}">
+                                <ul th:each="document:${included_documents}">
+                                    <li th:text="${document}">Original Signed Title</li>
+                                </ul>
+                              </div> -->
+                              <table th:if="${not #lists.isEmpty(included_documents)}" class="bordered-bottom" id="included-documents" cellspacing=0>
+                                <tr th:each="document:${included_documents}">
+                                  <td th:text="${document}">Original Signed Title</td>
+                                </tr>
+                                <tr th:each="document:${included_documents}">
+                                  <td th:text="${document}">Original Signed Title</td>
+                                </tr>
+                                <tr th:each="document:${included_documents}">
+                                  <td th:text="${document}">Original Signed Title</td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <!-- <div th:if="${not #lists.isEmpty(required_documents)}">
+                                <ul th:each="document:${required_documents}">
+                                  <li th:text="${document}">Letter of Gaurantee</li>
+                                </ul>
+                                <ul th:if="${#lists.isEmpty(required_documents)}">
+                                  <li>No Documents Required</li>
+                                </ul>
+                              </div> -->
+                              <table th:if="${not #lists.isEmpty(required_documents)}" class="bordered-bottom" id="required-documents" cellspacing=0>
+                                <tr th:each="document:${required_documents}">
+                                  <td th:text="${document}">Letter of Gaurantee</td>
+                                </tr>
+                                <tr th:if="${#lists.isEmpty(required_documents)}">
+                                  <td>No Documents Required</td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table> 
 
 
-                        <div style="color: #0d5db8; background-color: #f8f8f8; width: 100%; min-height: 520px; text-align: center; padding-bottom: 5px; border-radius: 5px;">
+
+                        <div class="to-do-list" style="color: #0d5db8; background-color: #f8f8f8; width: 100%; min-height: 440px; padding-bottom: 5px; border-radius: 5px;">
                           <!-- <h3 style="background-color: #0d5db8; color: #ffffff; padding: 10px; border-radius: 5px 5px 0px 0px;">Your Check List:</h3> -->
                           <br>
-                          <h2>What do you have to do?</h2>  
+                          <h2 class="to-do-list-header">What do you have to do?</h2>  
                           <br>
-                          <div style="height: 140px;padding: 0px 50px;">
-                            <div style="width: 15%;height:100%;display: inline-block;overflow:hidden">
-                              <i class="fa fa-truck w3-jumbo icon-flipped"></i>
+                          <div class="list-item" style="height: 140px; padding: 0px 50px;">
+                            <div style="width: 15%; height: 100%; display: inline-block; overflow: hidden; line-height: 140px;">
+                              <i class="fa fa-truck w3-jumbo icon-flipped responsive-icon"></i>
                             </div>
-                            <div style="width: 80%;height:100%;display: inline-block;overflow: hidden;">
+                            <div style="width: 80%; height: 100%; display: inline-block; overflow: hidden;">
                               <span>We will be shipping documents to your mailing address or they will be accessible within the self-service portal for E-Signature if applicable, or you can download and print them.</span>
                             </div>
                           </div>
 
-                          <div style="height: 140px;padding: 0px 50px;">
-                            <div style="width: 15%;height:100%;display: inline-block;overflow:hidden">
-                              <i class="fa fa-book w3-jumbo"></i>
+                          <div class="list-item" style="height: 100px; padding: 0px 50px;">
+                            <div style="width: 15%; height: 100%; display: inline-block; overflow: hidden; line-height: 100px;">
+                              <i class="fa fa-book w3-jumbo responsive-icon"></i>
                             </div>
-                            <div style="width: 80%;height:100%;display: inline-block;overflow: hidden;">
-                              <span>It is very important that you read all the instructions before completing any documents.</span>span>
-                            </div>
-                          </div>
-
-                          <div style="height: 120px;padding: 0px 50px;">
-                            <div style="width: 15%;height:100%;display: inline-block;overflow:hidden">
-                              <i class="fa fa-reply w3-jumbo"></i>
-                            </div>
-                            <div style="width: 80%;height:100%;display: inline-block;overflow: hidden;">
-                              <span>Once finished, please use the return shipping label provided to return your packet as soon as possible or upload the documents.</span>span>
+                            <div style="width: 80%; height: 100%; display: inline-block; overflow: hidden;">
+                              <span>It is very important that you read all the instructions before completing any documents.</span>
                             </div>
                           </div>
 
-                          
-                            <div style="text-align: center;">
-                              <button 
-                                style="
-                                background-color: #0d5db8;
-                                border: none;
-                                color: white;
-                                padding: 15px 40px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;
-                                font-size: 16px;
-                                border-radius: 30px;"
-                              >
-                                <b>
-                                  <a href="https://c-connect-qa4.copart.com/tp/2e89e242c7a" target="_blank" style="text-decoration: none; color: white;">
-                                    Login to Title Process Portal &nbsp; <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                  </a>
-                                </b>
-                              </button>
+                          <div class="list-item" style="height: 120px; padding: 0px 50px;">
+                            <div style="width: 15%; height: 100%; display: inline-block; overflow: hidden; line-height: 120px;">
+                              <i class="fa fa-reply w3-jumbo responsive-icon"></i>
+                            </div>
+                            <div style="width: 80%; height: 100%; display: inline-block; overflow: hidden;">
+                              <span>Once finished, please use the return shipping label provided to return your packet as soon as possible or upload the documents.</span>
+                            </div>
                           </div>
-                          <br>
                         </div>
                         
-                        <br><br>
                         
                         <p>
-                            Once our required documents(if any) are returned, they will be reviewed for compliancy purposes and we will 
+                            Once our required documents (if any) are returned, they will be reviewed for compliancy purposes and we will 
                             advise the adjuster on file, so they can proceed.  
                         </p>
 
-                        <div style="height: 140px;padding: 0px 50px;">
-                            <div style="width: 15%;height:100%;display: inline-block;overflow:hidden">
-                              <i class="fa fa-exclamation-circle w3-jumbo"></i>
-                            </div>
-                            <div style="width: 80%;height:100%;display: inline-block;overflow: hidden;">
-                              <span>Please make sure to reference your <strong>Lot #: [lot_number]</strong>
-                              when reaching out to us, so that we can easily locate your file
-                              and provide you with the most accurate information.</span>
-                            </div>
-                          </div>
                         
                         
-                        <br /><br />
+                        
                         Please do not hesitate to contact us if you have any questions or concerns.
                         <br /><br />
-                        Title Procurement Customer Service Representative<br />
-                        14185 Dallas Parkway STE B001<br />
-                        Dallas, TX 75254<br />
-                        Phone Number:
-                        <a
-                          href="tel:1-844-836-6767"
-                          target="_blank"
-                          style="color: #0d5db8; text-decoration: none"
-                          >+1 (844)-836-6767</a
-                        ><br />
-                        Copart E-Fax:
-                        <a
-                          href="tel:1-844-836-6767"
-                          target="_blank"
-                          style="color: #0d5db8; text-decoration: none"
-                          >+1 (319)-259-1003</a
-                        ><br />
-                        Email:
-                        <a
-                          href="mailto:titleprocurement@copart.com"
-                          target="_blank"
-                          style="color: #0d5db8; text-decoration: none"
-                          >titleprocurement@copart.com</a
-                        >
-                        <br /><br />
-                        Thank you for trusting USAA.
-                        <br /><br />
+                        
+                        <div class="list-item" style="height: 140px; padding: 0px 50px;">
+                          <div style="width: 15%; height: 100%; display: inline-block; overflow: hidden; line-height: 140px;">
+                            <i class="fa fa-exclamation-circle w3-jumbo responsive-icon"></i>
+                          </div>
+                          <div style="width: 80%; height: 100%; display: inline-block; overflow: hidden;">
+                            <span>Please make sure to reference your <strong>Lot #: [lot_number]</strong>
+                            when reaching out to us, so that we can easily locate your file
+                            and provide you with the most accurate information.</span>
+                          </div>
+                        </div>
+
+                        <div class="signature">
+                          Title Procurement Customer Service Representative<br />
+                          14185 Dallas Parkway STE B001<br />
+                          Dallas, TX 75254<br />
+                          Phone Number:
+                          <a
+                            href="tel:1-844-836-6767"
+                            target="_blank"
+                            style="color: #0d5db8; text-decoration: none"
+                            >+1 (844)-836-6767</a
+                          ><br />
+                          Copart E-Fax:
+                          <a
+                            href="tel:1-844-836-6767"
+                            target="_blank"
+                            style="color: #0d5db8; text-decoration: none"
+                            >+1 (319)-259-1003</a
+                          ><br />
+                          Email:
+                          <a
+                            href="mailto:titleprocurement@copart.com"
+                            target="_blank"
+                            style="color: #0d5db8; text-decoration: none"
+                            >titleprocurement@copart.com</a
+                          >
+                          <br /><br />
+                          Thank you for trusting USAA.
+                          <br /><br />
+                        </div>
                       </div>
                     </td>
                   </tr>
