@@ -1,0 +1,1620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#ffffff">
+    <title><span th:text="${subject}">Seller Account | Claim: 123456 | Lot: 123456</span></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  </head>
+
+  <style type="text/css">
+    @media screen {
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Open Sans Regular"), local("OpenSans-Regular"),
+          url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bbck.woff)
+            format("woff");
+      }
+    }
+
+    body {
+      font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .navbar a {
+      color: #ffffff;
+    }
+    .navbar a:visited {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .navbar a:active {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-login a {
+      color: #ffffff;
+    }
+    .btn-login a:visited {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-login a:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-login a:active {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .backup-link a {
+      color: #0d5db8;
+    }
+    .backup-link a:visited {
+      color: #0d5db8;
+      text-decoration: none;
+    }
+    .backup-link a:hover {
+      color: #0d5db8;
+      text-decoration: none;
+    }
+    .backup-link a:active {
+      color: #0d5db8;
+      text-decoration: none;
+    }
+    div.hide_desktop {
+      display: none !important;
+    }
+    .icon-flipped {
+      transform: scaleX(-1);
+      -moz-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+    }
+    .bordered th, .bordered td {
+      border: 1px solid #dddddd;
+      vertical-align: top;
+      padding: 0;
+    }
+    .bordered-bottom {
+      width: 100%;
+    }
+    #included-documents td, #required-documents td {
+      padding: 5px;
+      border: none;
+      /* height: 50px; */
+      vertical-align: middle;
+    }
+    #included-documents tr:nth-child(even), #required-documents tr:nth-child(even) {
+      background-color: rgb(13, 93, 184, 0.1);
+    }
+    #included-documents tr, #required-documents tr {
+      width: 100%;
+    }
+    .to-do-list {
+        color: #0d5db8;
+        background-color: #f8f8f8;
+        width: 100%;
+        min-height: 300px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+      }
+    .to-do-list-header {
+        text-align: center;
+    }
+    .bg-white {
+        background-color: #ffffff;
+        color: #2f3942;
+    }
+    .btn-login {
+        margin: 0 auto;
+        width: 300px;
+    }
+    .btn-login img {
+      width: 21px;
+      height: 21px;
+    }
+    .navbar img {
+      height: 14px;
+      width: 14px;
+    }
+    .list-item-icon img {
+        width: 100%;
+    }
+    .chevron-right {
+      height: 14px;
+      width: 14px;
+    }
+    img[class="responsive-logo-img"] {
+      /* height: 100% !important; */
+      width: auto !important;
+      display: inline-block;
+      margin: auto;
+    }
+    .logo-section img {
+      /* height: 100% !important; */
+      width: auto !important;
+      display: inline-block;
+      margin: auto;
+    }
+    /*DESKTOP STYLES*/
+    @media only screen and (min-width: 640px) {
+      .to-do-list {
+        text-align: center;
+      }
+      .list-item {
+        height: auto;
+        margin-bottom: 20px !important;
+        padding: 10px 50px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      .to-do-list-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .list-item-icon {
+          margin-right: 10px;
+      }
+    }
+
+    @media only screen and (min-width: 481px) {
+      *[class*="mobileOn"] {
+        width: 0px !important;
+        display: block !important;
+        max-height: none !important;
+      }
+    }
+
+    /*IPHONE and Other Mobile devices STYLES*/
+    @media screen and (min-device-width: 375px) and (max-device-width: 667px), 
+    screen and (min-device-width: 375px) and (max-device-width: 812px),
+    screen and (min-device-width: 414px) and (max-device-width: 736px), 
+    screen and (device-width: 320px) and (device-height: 640px), 
+    screen and (device-width: 360px) and (device-height: 592px), 
+    screen and (device-width: 360px) and (device-height: 640px), 
+    screen and (device-width: 384px) and (device-height: 592px),
+    screen and (device-width: 390px) and (device-height: 844px),
+    screen and (device-width: 412px) and (device-height: 869px),
+    screen and (device-width: 480px) and (device-height: 800px) {
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      table.container {
+        width: 100vw !important;
+      }
+      td[class~="hide_on_mobile"] {
+        display: none !important;
+        mso-hide: all !important;
+        width: 0px !important;
+        height: 0px !important;
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+        overflow: hidden !important;
+      }
+
+      img[class="responsive-img"] {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      td.banner {
+        width: 100% !important;
+        display: block !important;
+        padding: 0 !important;
+      }
+      td.footer_img {
+        width: 100% !important;
+        display: block !important;
+        padding: 0 !important;
+      }
+      div.hide_desktop {
+        display: table !important;
+        float: none !important;
+        width: 100% !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+      td.content table.content_block_1 {
+        width: 100% !important;
+      }
+      td.content table.content_block_1 td {
+        text-align: center !important;
+      }
+      td.content table.content_block_2 {
+        width: 100% !important;
+        padding-top: 30px;
+      }
+      td.content table.content_block_2 td {
+        text-align: center !important;
+      }
+      td.content table.content_block_2 td ul li {
+        text-align: left !important;
+      }
+
+      td.content table.icon_block {
+        width: 100% !important;
+      }
+      td.content table.icon_block td {
+        text-align: center !important;
+      }
+
+      td.content table.content_block {
+        width: 100% !important;
+        margin-top: 40px;
+      }
+      td.content table.content_block p {
+        text-align: left !important;
+      }
+      td.content table.content_block table.content_btn {
+        text-align: center !important;
+      }
+
+      td.member_guide table.member_guide_block table.member_btn {
+        width: 80% !important;
+      }
+      td.social_icons table.social_icons_container table.social_icons_block_1 {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+      }
+      td.social_icons table.social_icons_container table.social_icons_block_2 {
+        width: 100% !important;
+        padding: 25px 0 0 0 !important;
+      }
+      td.logos table.logos_1 {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+      }
+      td.logos table.logos_2 {
+        width: 100% !important;
+        padding: 30px 0 0 0 !important;
+      }
+      td.inventory table.inventory_block {
+        width: 100% !important;
+        padding: 0 0 0 0 !important;
+        margin: 0 0 0 10px !important;
+      }
+      td.inventory table.inventory_block td {
+        width: 50% !important;
+        padding: 0 0 0 0 !important;
+      }
+      td.inventory table.inventory_block td table.inventory_cell {
+        width: 90% !important;
+        padding: 0 0 0 0 !important;
+      }
+      td.inventory
+        table.inventory_block
+        td
+        table.inventory_cell
+        td.inventory_cell_info {
+        padding: 10px !important;
+      }
+
+      *[class="mobileOff"] {
+        width: 0px !important;
+        display: none !important;
+      }
+      *[class*="mobileOn"] {
+        display: table !important;
+        max-height: none !important;
+      }
+
+      div[class="mobilecontent"] {
+        display: block !important;
+        max-height: none !important;
+      }
+
+      table[class="mobileFooter"] {
+        width: 100% !important;
+      }
+
+      .map {
+        width: 100% !important;
+        display: block !important;
+      }
+
+      .center {
+        width: 100% !important;
+        text-align: center !important;
+        margin: auto !important;
+        padding-right: 20px !important;
+      }
+
+      .list-item {
+        height: auto;
+        /* margin-bottom: 20px; */
+        padding: 0px 5px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .responsive-icon:before {
+        font-size: 33px;
+      }
+
+      .signature {
+        margin-top: 20px;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- begin wrapper table fluid -->
+    <table
+      width="100%"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+      class="devicewidth"
+      
+    >
+      <tr>
+        <td>
+          <!-- begin container table fixed -->
+          <table
+            width="100%"
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+            align="center"
+            class="container"
+            style="max-width: 640px;"
+          >
+            <!-- begin navigation row -->
+            <tr>
+              <td align="center" valign="top" bgcolor="#0d5db8" style="background-color: #0d5db8; padding-top: 10px; padding-bottom: 10px;">
+                <!-- begin navigation table -->
+                <table
+                  width="100%"
+                  border="0"
+                  cellspacing="0"
+                  cellpadding="0"
+                  class="devicewidth navbar"
+                  bgcolor="#0d5db8"
+                >
+                  <tr>
+                    <td
+                      width="50%"
+                      align="center"
+                      valign="bottom"
+                      style="
+                        color: #ffffff;
+                        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        font-weight: bold;
+                        text-align: left;
+                        padding-left: 25px;
+                      "
+                    >
+                      Lot #<span th:text="${lot_number}" style="color:#ffffff !important;text-decoration:none !important;">123456</span>
+                    </td>
+                    <td
+                      width="50%"
+                      align="right"
+                      valign="bottom"
+                      style="
+                        color: #ffffff;
+                        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        font-weight: bold;
+                        text-align: right;
+                        padding-right: 25px;
+                      "
+                    >
+                      <table
+                        width="100%"
+                        align="right"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                        th:unless="${dont_include_webapp_link}"
+                      >
+                        <tr>
+                          <td
+                            align="right"
+                            valign="bottom"
+                            style="vertical-align:bottom;
+                            text-align:right;
+                            font-weight:bold;"
+                          >
+                            <a
+                              th:href="${webapp_link}"
+                              style="color: #ffffff;text-decoration: none;"
+                              target="_blank"
+                            >
+                              <span style="color:#ffffff;">
+                                <font color="#ffffff">
+                                  Title Process Portal
+                                </font>
+                              </span>
+                            </a>
+                          </td>
+                          <td align="left" valign="middle" style="vertical-align:middle;font-size:0;line-height:0px;padding-left:5px;">
+                            <a
+                              th:href="${webapp_link}"
+                              style="color: #ffffff;text-decoration: none;"
+                              target="_blank"
+                            >
+                              <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/chevron-right-solid.png" alt="Link To Title Process Portal" class="chevron-right" style="height: 14px; width: 14px; vertical-align:middle;" width="14" height="14" border="0">
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- /end navigation table -->
+              </td>
+            </tr>
+            <!-- /end navigation row -->
+
+            <!-- begin header row -->
+            <tr>
+              <td align="left" valign="top">
+                <!-- begin header table -->
+                <table
+                  width="100%"
+                  height="100"
+                  border="0"
+                  cellspacing="0"
+                  cellpadding="0"
+                  class="devicewidth bg-white"
+                >
+                  <tr>
+                    <td
+                      align="center"
+                      style="padding: 30px 0;"
+                    >
+                      <table align="center" border="0" cellpadding="0" cellspacing="0" class="logo-section">
+                        <tr>
+                          <td align="center">
+                            <div style="height: auto !important;">
+                              <img
+                                  th:if="${seller_logo_to_use != null and seller_logo_to_use != ''}"
+                                  th:src="${seller_logo_to_use}"
+                                  src="https://titlelogos.s3-us-west-2.amazonaws.com/seller_logos/USA.png"
+                                  border="0"
+                                  alt="${preferred_seller_name}"
+                                  class="responsive-logo-img"
+                                  style="height: auto !important;
+                                  max-height: 100px;
+                                  width: auto !important;
+                                  max-width: 500px;
+                                  display: inline-block;
+                                  margin: auto;"
+                                  height="100"
+                                  width="auto"
+                              />
+                              <img
+                                  th:if="${seller_logo_to_use == null or seller_logo_to_use == ''}"
+                                  src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/CopartLogo3.png"
+                                  border="0"
+                                  alt="Copart"
+                                  class="responsive-logo-img"
+                                  style="height: auto !important;
+                                  max-height: 100px;
+                                  width: auto !important;
+                                  max-width: 500px;
+                                  display: inline-block;
+                                  margin: auto;"
+                                  height="100"
+                                  width="auto"
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center">
+                            <table th:if="${seller_logo_to_use != null and seller_logo_to_use != ''}" border="0" align="center" cellpadding="0" cellspacing="0" style="height: 40px !important;">
+                              <tr>
+                                <td width="50%" align="right" valign="middle" style="padding-right:10px;">
+                                  <span style="font-size: 12px; font-family: 'Lato', Helvetica, sans-serif; color: #2f3942;">
+                                    Powered By
+                                  </span>
+                                </td>
+                                <td width="50%" align="left" valign="middle" style="padding-left:10px;">
+                                  <img
+                                  src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/CopartLogo3.png"
+                                  border="0"
+                                  alt="Copart"
+                                  class="responsive-logo-img"
+                                  style="padding: 3px 0px 0px 3px;
+                                  height: 40px !important;
+                                  width: auto !important;
+                                  display: inline-block;
+                                  margin: auto;"
+                                  height="40"
+                                  width="auto"
+                              />
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- /end header table -->
+              </td>
+            </tr>
+            <!-- /end header row -->
+
+            <!-- begin headline row -->
+            <tr>
+              <td align="left" valign="top" >
+                <table
+                  width="100%"
+                  align="center"
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="margin: auto"
+                  class="bg-white"
+                >
+                  <!-- begin spacing row -->
+                  <tr>
+                    <td
+                      height="40"
+                      style="
+                        font-size: 1px;
+                        line-height: 1px;
+                        mso-line-height-rule: exactly;
+                      "
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <!-- /end spacing row -->
+                  <tr>
+                    <td valign="top" style="padding: 0px 0px 0px 10px">
+                      <div
+                        style="
+                          color: #2f3942;
+                          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                          font-size: 16px;
+                          font-weight: 300;
+                          margin: 0 15px 0 15px;
+                          text-align: left;
+                        "
+                      >
+                        Hello <strong><span th:text="${primary_and_secondary_owners}">Bob and Alice</span></strong>,
+                        <br /><br />
+                        Copart Title Procurement has teamed up with <span th:text="${preferred_seller_name}">Seller Account</span> to assist you with the total loss processing on your <span th:text="${vehicle_year}">1994</span> <span th:text="${vehicle_make}">Honda</span> <span th:text="${vehicle_model}">Accord</span>.
+
+                        <div th:unless="${dont_include_webapp_link}">
+                          <br />
+                          <p style="text-align: center;">Please review and track the status here:</p>
+                          <div style="text-align: center;">
+                            <table width="300" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;" class="btn-login">
+                              <tr>
+                                <td align="center" valign="middle" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: bold; text-decoration: none;border-radius: 30px; padding: 12px 18px; border: 1px solid #0d5db8; background-color: #0d5db8; display: inline-block; overflow: hidden;">
+                                  <table
+                                    align="center"
+                                    border="0"
+                                    cellspacing="0"
+                                    cellpadding="0"
+                                  >
+                                    <tr>
+                                      <td
+                                        align="center"
+                                        style="color:#ffffff;font-family:Arial, sans-serif;text-align:center;font-weight:bold;"
+                                      >
+                                        <a th:href="${webapp_link}" href="https://www.copart.com/" target="_blank" style="display:block;width:100%;color:#ffffff;text-decoration:none;">
+                                          <span style="color:#ffffff;">
+                                            <font color="#ffffff">
+                                              Login to Title Process Portal
+                                            </font>
+                                          </span>
+                                        </a>
+                                      </td>
+                                      <td align="left" valign="middle" style="line-height:0px;padding-left:5px;">
+                                        <a th:href="${webapp_link}" href="https://www.copart.com/" target="_blank" style="display:block;width:100%;color:white;text-decoration:none;">
+                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/chevron-right-solid.png" alt="Go To Title Process Portal Login Page" style="width: 21px; height: 21px;" width="21" height="21">
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                          <p style="text-align: center; margin-top: 0px;" class="backup-link">
+                            <small>
+                              You can also use this link to access the Portal:<br>
+                              <a th:href="${webapp_link}" th:text="${webapp_link}" target="_blank" style="color: #0d5db8;">https://connect.copart.com/tp/145ed492dcf?source=email</a>
+                            </small>
+                          </p>
+                          <br />
+                        </div>
+
+                        <div th:if="${outbound_delivery_details != null}" style="margin-bottom: 20px;width: 100%;">
+                          <span style="font-weight: bold;">Your documents are on the way! Here are the shipment details:</span>
+                          <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="background-color: #f8f8f8;
+                            border-radius: 8px;
+                            border: 1px dotted #2f3942;
+                            overflow: hidden;
+                            max-width: 600px;"
+                          >
+                            <tbody>
+                              <tr>
+                                <td align="center">
+                                  <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="50%" align="left" valign="middle" style="padding: 15px;">
+                                          <span>Shipping Method:</span>
+                                          <br />
+                                          <span th:text="${outbound_delivery_details.shipping_type}" style="font-weight: bold;">FEDEX</span>
+                                          <br />
+                                          <span>Tracking Number:</span>
+                                          <br />
+                                          <span th:text="${outbound_delivery_details.tracking_number}" style="font-weight: bold;">796231639897</span>
+                                        </td>
+                                        <td width="50%" align="center" valign="middle" style="padding: 15px;">
+                                          <div
+                                            style="text-align: center;
+                                            width: 100%;
+                                            /* width: -webkit-calc(100% - 30px);
+                                            width: -moz-calc(100% - 30px);
+                                            width: calc(100% - 30px); */"
+                                          >
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td
+                                                  width="100%"
+                                                  align="center"
+                                                  valign="middle"
+                                                  style="border: 1px solid #0d5db8; background-color: #0d5db8; font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: bold; text-decoration: none;border-radius: 8px; padding: 12px 0px; display: inline-block; overflow: hidden;"
+                                                  th:style="${outbound_delivery_details.shipping_type == 'FEDEX' ? 'border: 1px solid #FF6600 !important; background-color: #FF6600 !important; font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: bold; text-decoration: none;border-radius: 8px; padding: 12px 0px; display: inline-block; overflow: hidden;' : 'border:1px solid #004B87 !important;background-color:#004B87 !important; font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: bold; text-decoration: none;border-radius: 8px; padding: 12px 0px; display: inline-block; overflow: hidden;'}"
+                                                >
+                                                  <table
+                                                    align="center"
+                                                    border="0"
+                                                    cellspacing="0"
+                                                    cellpadding="0"
+                                                  >
+                                                    <tr>
+                                                      <td
+                                                        align="left"
+                                                        style="color:#ffffff;font-family:Arial, sans-serif;text-align:center;font-weight:bold;"
+                                                      >
+                                                        <a th:href="${outbound_delivery_details.label_url}" href="https://www.copart.com/" target="_blank" style="display:block;width:100%;color:#ffffff;text-decoration:none;">
+                                                          <span style="color:#ffffff;">
+                                                            <font color="#ffffff">
+                                                              Track Your Documents
+                                                            </font>
+                                                          </span>
+                                                        </a>
+                                                      </td>
+                                                      <td align="right" valign="middle" style="line-height:0px;padding-left:5px;">
+                                                        <a th:href="${outbound_delivery_details.label_url}" href="https://www.copart.com/" target="_blank" style="display:block;width:100%;color:white;text-decoration:none;">
+                                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/chevron-right-solid.png" alt="Go To Shipment Tracking Page" style="width: 21px; height: 21px;" width="21" height="21">
+                                                        </a>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <br />
+                        </div>
+
+                        <div th:if="${not #lists.isEmpty(included_documents)}" style="margin: 20px 0px;">
+                          <table th:if="${not #lists.isEmpty(included_documents)}" style="width: 100%; border-collapse: collapse; border-radius: 5px; border: 1px solid; overflow: hidden;" class="bordered">
+                              <tr style="background-color: rgb(13, 93, 184); color: #f8f8f8;">
+                                <th align="center" style="font-size: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">Documents included in the email</th>
+                              </tr>
+                              <tr style="background-color: rgb(13, 93, 184, 0.05);">
+                                <td>
+                                  <table class="bordered-bottom" id="included-documents" cellspacing=0 width="100%">
+                                    <tr
+                                      th:each="document, iStat : ${included_documents}"
+                                      th:style="${iStat.even}? 'background-color: rgb(13, 93, 184, 0.1);'"
+                                      style="width: 100%;">
+                                          <td th:text="${iStat.index + 1} + '. ' + ${document}" style="padding: 5px;">
+                                              Original Signed Title
+                                          </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                          </table>
+                        </div>
+
+                        <div th:if="${not #lists.isEmpty(required_documents)}" style="margin-top: 20px;">
+                          <table th:if="${not #lists.isEmpty(required_documents)}" style="width: 100%; border-collapse: collapse; border-radius: 5px; border: 1px solid; overflow: hidden;" class="bordered">
+                              <tr style="background-color: rgb(13, 93, 184); color: #f8f8f8;">
+                                <th align="center" style="font-size: 15px; border-top-left-radius: 5px; border-top-right-radius: 5px;">Documents needed from you</th>
+                              </tr>
+                              <tr style="background-color: rgb(13, 93, 184, 0.05);">
+                                <td>
+                                  <table class="bordered-bottom" id="required-documents" cellspacing=0 width="100%">
+                                    <tr
+                                      th:each="document, iStat : ${required_documents}"
+                                      th:style="${iStat.even}? 'background-color: rgb(13, 93, 184, 0.1);'"
+                                      style="width: 100%;">
+                                          <td th:text="${iStat.index + 1} + '. ' + ${document}" style="padding: 5px;">
+                                              Letter of Guarantee
+                                          </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                          </table>
+                          <br />
+                        </div>
+
+                        <div th:if="${esign_documents_involved}" style="margin-bottom: 20px;width: 100%;">
+                          <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="background-color: #f8f8f8;
+                            border-radius: 8px;
+                            border: 1px dotted #2f3942;
+                            overflow: hidden;
+                            max-width: 600px;"
+                          >
+                            <tbody>
+                              <tr>
+                                <td align="center">
+                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="12%" align="center" valign="middle" style="padding: 15px 3px 15px 20px;">
+                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/file-signature-solid.png" alt="E-Signature" style="width: 100%;" width="35" height="auto">
+                                        </td>
+                                        <td width="88%" align="left" valign="middle" style="padding: 15px;">
+                                          <span>
+                                            One or more of the documents needed to move forward can be signed electronically and are accessible within the 
+                                            <a th:href="${webapp_link}" href="https://www.copart.com/" target="_blank" style="width:100%;color: #0d5db8;text-decoration:none;">
+                                              Title Process Portal
+                                            </a> 
+                                            for <nobr>E-Signature</nobr>.
+                                          </span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div class="to-do-list" style="color: #0d5db8; background-color: #f8f8f8; min-height: 300px; padding-bottom: 5px; border-radius: 5px; overflow: hidden;">
+                          <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr>
+                                <td align="center" style="color: #0d5db8;padding:30px 0px;font-size:30px;text-align:center;line-height:45px;">
+                                  What do you have to do?
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="padding-bottom:15px;">
+                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="16%" align="right" valign="middle" style="padding: 5px 8px 5px 20px;">
+                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/truck-solid.png" alt="Shipping" style="width: 40px;" width="40" height="auto">
+                                        </td>
+                                        <td width="84%" align="center" valign="middle" style="color: #0d5db8;padding: 5px 40px 5px 10px;">
+                                          <span>We will be shipping documents to your mailing address. They will be accessible within the <nobr>self-service</nobr> portal for <nobr>E-Signature</nobr> (if applicable).</span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="padding-bottom:15px;">
+                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="16%" align="right" valign="middle" style="padding: 5px 8px 5px 20px;">
+                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/book-solid.png" alt="Instructions" style="width: 40px;" width="40" height="auto">
+                                        </td>
+                                        <td width="84%" align="center" valign="middle" style="color: #0d5db8;padding: 5px 40px 5px 10px;">
+                                          <span>It is very important that you read all the instructions before completing any documents.</span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="padding-bottom:15px;">
+                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="16%" align="right" valign="middle" style="padding: 5px 8px 5px 20px;">
+                                          <img src="https://titlelogos.s3.us-west-2.amazonaws.com/tp_utilities/reply-solid.png" alt="Return" style="width: 40px;" width="40" height="auto">
+                                        </td>
+                                        <td width="84%" align="center" valign="middle" style="color: #0d5db8;padding: 5px 40px 5px 10px;">
+                                          <span>Once finished, please use the return shipping label provided to return your packet or upload the documents through Title Process Portal (if applicable).</span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <br />
+                        <div class="signature">
+                          Title Procurement Customer Service Representative<br />
+                          <span th:text="${address_line_1}">14185 Dallas Parkway STE B001</span>
+                          &nbsp;
+                          <span th:text="${address_line_2}"></span><br />
+                          <span th:text="${city}">Dallas</span>, <span th:text="${state}">TX</span> <span th:text="${zip}">75254</span><br />
+                          Phone Number:
+                          <a
+                            th:href="'tel:' + ${phone_number}"
+                            target="_blank"
+                            style="color: #0d5db8; text-decoration: none"
+                            ><span th:text="${phone_number}">(844) 836-6767</span></a
+                          ><br />
+                          Copart E-Fax:
+                          <a
+                            th:href="'tel:' + ${fax_number}"
+                            target="_blank"
+                            style="color: #0d5db8; text-decoration: none"
+                            ><span th:text="${fax_number}">(319) 259-1003</span></a
+                          >
+                          <br /><br />
+                          <small th:if="${do_not_reply}">
+                            <hr>
+                            <b>Note: </b>
+                            This email was sent from an unmonitored address. Please do not reply to this email.
+                            <br>
+                            For more information or any questions, please email:
+                            <a
+                                href="mailto:coparttitleprocurement@copart.com"
+                                target="_blank"
+                                style="color: #0d5db8; text-decoration: none"
+                                >coparttitleprocurement@copart.com</a
+                            >
+                            <br><br>
+                          </small>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- /end spacing row -->
+                  <!-- /end spacing row -->
+                </table>
+                <!-- /end headline table -->
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="center"
+                valign="top"
+                bgcolor="#0d5db8"
+                class="social_icons"
+              >
+                <!-- begin social icon footer table -->
+                <table
+                  width="100%"
+                  cellspacing="0"
+                  cellpadding="0"
+                  align="center"
+                  border="0"
+                  class="social_icons_container"
+                >
+                  <tr>
+                    <td
+                      valign="top"
+                      align="center"
+                      bgcolor="#0d5db8"
+                      style="
+                        color: #ffffff;
+                        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                        font-size: 18px;
+                        font-weight: bold;
+                        padding: 30px 0 30px 0;
+                      "
+                    >
+                      Connect with Copart
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="padding: 0 40px 0 40px">
+                      <!-- begin social icon table desktop -->
+                      <table
+                        cellspacing="0"
+                        cellpadding="0"
+                        align="center"
+                        border="0"
+                        class="mobileOff"
+                      >
+                        <tr>
+                          <td
+                            width="100"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://www.facebook.com/Copart" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_facebook.png"
+                                width="20"
+                                height="auto"
+                                alt="Facebook Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://twitter.com/copart" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_twitter.png"
+                                width="20"
+                                height="auto"
+                                alt="Twitter Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://www.instagram.com/copart1982" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_instagram.png"
+                                width="20"
+                                height="auto"
+                                alt="Instagram Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://www.linkedin.com/company/copart" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_linkedin.png"
+                                width="20"
+                                height="auto"
+                                alt="LinkedIn Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://www.youtube.com/copart" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_youtube.png"
+                                width="20"
+                                height="auto"
+                                alt="YouTube Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a href="https://copartcommunity.com" target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_blog.png"
+                                width="20"
+                                height="auto"
+                                alt="Blog Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a
+                              href="https://itunes.apple.com/us/app/copart-mobile/id414275302"
+                              target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_apple.png"
+                                width="18"
+                                height="auto"
+                                alt="Apple Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="40"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                          <td
+                            width="20"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                            style="overflow: hidden;"
+                          >
+                            <a
+                              href="https://play.google.com/store/apps/details?id=com.copart.membermobile&hl=en"
+                              target="_blank"
+                              ><img
+                                src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_android.png"
+                                width="17"
+                                height="auto"
+                                alt="Android Logo"
+                                border="0"
+                            /></a>
+                          </td>
+                          <td
+                            width="100"
+                            height="20"
+                            align="center"
+                            valign="middle"
+                          >
+                            &nbsp;
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- /end social icon table desktop -->
+
+                      <!-- begin social icon table mobile-->
+                      <!--[if !mso 9]><!-->
+                      <div
+                        class="mobilecontent"
+                        style="display: none; max-height: 0px; overflow: hidden"
+                      >
+                        <table
+                          cellspacing="0"
+                          cellpadding="0"
+                          align="center"
+                          border="0"
+                          class="mobileOn"
+                        >
+                          <tr>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://www.facebook.com/Copart" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_facebook.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="Facebook Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://twitter.com/copart" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_twitter.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="Twitter Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://www.instagram.com/copart1982" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_instagram.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="Instagram Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://www.linkedin.com/company/copart" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_linkedin.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="LinkedIn Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td height="20" colspan="7">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://www.youtube.com/copart" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_youtube.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="YouTube Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a href="https://copartcommunity.com" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_blog.png"
+                                  width="20"
+                                  height="auto"
+                                  alt="Blog Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a
+                                href="https://itunes.apple.com/us/app/copart-mobile/id414275302" target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_apple.png"
+                                  width="18"
+                                  height="auto"
+                                  alt="Apple Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                            <td
+                              width="40"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                            >
+                              &nbsp;
+                            </td>
+                            <td
+                              width="20"
+                              height="20"
+                              align="center"
+                              valign="middle"
+                              style="overflow: hidden;"
+                            >
+                              <a
+                                href="https://play.google.com/store/apps/details"
+                                target="_blank"
+                                ><img
+                                  src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_android.png"
+                                  width="17"
+                                  height="auto"
+                                  alt="Android Logo on Mobile Device"
+                                  border="0"
+                              /></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!--<![endif]-->
+                      <!-- /end social icon table mobile-->
+                    </td>
+                  </tr>
+                  <!-- begin spacing row -->
+                  <tr>
+                    <td
+                      height="60"
+                      style="
+                        font-size: 1px;
+                        line-height: 1px;
+                        mso-line-height-rule: exactly;
+                      "
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <!-- /end spacing row -->
+                </table>
+                <!-- /end social icon footer table -->
+              </td>
+            </tr>
+            <!-- /end social icon footer row -->
+
+            <!-- begin logos footer row -->
+            <tr>
+              <td align="center" valign="top" bgcolor="#0d5db8" class="logos">
+                <!-- begin logos footer desktop -->
+                <table
+                  width="80%"
+                  cellspacing="0"
+                  cellpadding="0"
+                  align="center"
+                  border="0"
+                  class="mobileOff"
+                >
+                  <tr>
+                    <td width="18%" align="center" valign="middle">
+                      <a href="https://www.copart.com" target="_blank"
+                        ><img
+                          src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_copart-white.png"
+                          width="79"
+                          height="30"
+                          alt="Copart Logo"
+                          border="0"
+                          class="responsive-img"
+                      /></a>
+                    </td>
+                    <td width="3%">&nbsp;</td>
+                    <td width="18%" align="center" valign="middle">
+                      <a href="https://www.crashedtoys.com"
+                        ><img
+                          src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_crashedtoys-white.png"
+                          width="118"
+                          height="15"
+                          alt="CrashedToys Logo"
+                          border="0"
+                          class="responsive-img"
+                      /></a>
+                    </td>
+                    <td width="3%">&nbsp;</td>
+                    <td width="18%" align="center" valign="middle">
+                      <a href="https://www.npauctions.com/cp/HP" target="_blank"
+                        ><img
+                          src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/NPA_logo.png"
+                          width="92"
+                          height="22"
+                          alt="NPA Logo"
+                          border="0"
+                          class="responsive-img"
+                      /></a>
+                    </td>
+                    <td width="2%">&nbsp;</td>
+                    <td width="18%" align="center" valign="middle">
+                      <a href="https://www.cashforcars.com/" target="_blank"
+                        ><img
+                          src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/5e820490-5a45-4535-996a-37f4f0560c2c.png"
+                          width="100"
+                          height="17"
+                          alt="Cash For Cars Logo"
+                          border="0"
+                          class="responsive-img"
+                      /></a>
+                    </td>
+                  </tr>
+                </table>
+                <!-- /end logos desktop -->
+
+                <!-- begin logos table mobile-->
+                <!--[if !mso 9]><!-->
+                <div
+                  class="mobilecontent"
+                  style="display: none; max-height: 0px; overflow: hidden"
+                >
+                  <table
+                    width="100%"
+                    cellspacing="0"
+                    cellpadding="0"
+                    align="left"
+                    border="0"
+                    class="mobileOn"
+                  >
+                    <tr>
+                      <td width="50%" align="center" valign="middle">
+                        <a href="https://www.copart.com" target="_blank"
+                          ><img
+                            src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_copart-white.png"
+                            width="79"
+                            height="30"
+                            alt="Copart Logo on Mobile Device"
+                            border="0"
+                        /></a>
+                      </td>
+                      <td width="50%" align="center" valign="middle">
+                        <a href="https://www.crashedtoys.com" target="_blank"
+                          ><img
+                            src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/f_crashedtoys-white.png"
+                            width="118"
+                            height="15"
+                            alt="CrashedToys Logo on Mobile Device"
+                            border="0"
+                        /></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height="20" colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td width="50%" align="center" valign="middle">
+                        <a href="https://www.npauctions.com/cp/HP" target="_blank"
+                          ><img
+                            src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/NPA_logo.png"
+                            width="92"
+                            height="22"
+                            alt="NPA Logo on Mobile Device"
+                            border="0"
+                        /></a>
+                      </td>
+                      <td width="50%" align="center" valign="middle">
+                        <a href="https://www.cashforcars.com/" target="_blank"
+                          ><img
+                            src="http://c-static.copart.com/v1/AUTH_ycs_user/ycs_icons/5e820490-5a45-4535-996a-37f4f0560c2c.png"
+                            width="100"
+                            height="17"
+                            alt="Cash For Cars Logo on Mobile Device"
+                            border="0"
+                        /></a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--<![endif]-->
+                <!-- /end logos table mobile-->
+              </td>
+            </tr>
+            <!-- begin spacing row -->
+            <tr>
+              <td
+                height="30"
+                style="
+                  font-size: 1px;
+                  line-height: 1px;
+                  mso-line-height-rule: exactly;
+                "
+                bgcolor="#0d5db8"
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <!-- /end spacing row -->
+            <!-- /end logos footer row -->
+
+            <!-- begin footer row -->
+            <tr>
+              <td align="center" bgcolor="#2f3942">
+                <!-- begin footer table -->
+                <table
+                  width="100%"
+                  cellspacing="0"
+                  cellpadding="0"
+                  align="center"
+                  border="0"
+                >
+                  <tr>
+                    <td
+                      align="center"
+                      style="
+                        color: #ffffff;
+                        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                        font-size: 10px;
+                        line-height: 20px;
+                        padding: 25px 0 0 0;
+                      "
+                    >
+                      This email was sent to:
+                      <a
+                        th:href="'mailto:' + ${to}"
+                        target="_blank"
+                        style="
+                          color: #ffffff;
+                          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                          font-size: 10px;
+                          text-decoration: none;
+                        "
+                        ><span th:text="${to}">test@copart.com</span>
+                      </a>
+                      <br />
+                      This email was sent by: Copart, Inc.
+                      <br />
+                      14185 Dallas Parkway, Suite 400, Dallas, TX 75254 United States
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="center"
+                      style="
+                        color: #c0c8d1;
+                        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                        font-size: 10px;
+                        line-height: 20px;
+                        padding: 20px 0 10px 0;
+                      "
+                    >
+                      <!-- Copyright &copy; %%=Format(Now(), "yyyy")=%% Copart Inc. -->
+                      Copyright &copy; <span th:text="${#dates.year(#dates.createNow())}">2021</span> Copart Inc.
+                      All Rights Reserved |
+                      <a
+                        href="https://www.copart.com/Content/US/en/Privacy-Policy"
+                        style="
+                          color: #c0c8d1;
+                          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                          font-size: 10px;
+                          text-decoration: none;
+                        "
+                        target="_blank"
+                        >Privacy Policy</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+                <!-- /end footer table -->
+              </td>
+            </tr>
+            <!-- /end footer row -->
+          </table>
+          <!-- /end container table fixed -->
+        </td>
+      </tr>
+    </table>
+    <!-- /end wrapper table fluid -->
+    <custom name="opencounter" type="tracking"> </custom>
+  </body>
+</html>
